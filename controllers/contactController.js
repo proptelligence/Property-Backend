@@ -17,7 +17,7 @@ exports.sendEmail = async (req, res) => {
 
         const mailOptions = {
             from: 'workingajay7@gmail.com',
-            to: 'ajaymedidhi858@gmail.com',
+            to: 'info@proptelligence',
             subject: 'New Contact Form Submission',
             text: `Name: ${name}\nMobile Number: ${mobileNumber}\nEmail: ${email}\nMessage: ${message}`,
         };
