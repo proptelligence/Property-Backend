@@ -6,6 +6,7 @@ const { Cashfree } = require('cashfree-pg');
 require('dotenv').config();
 const authRoutes = require('./routes/authRoutes');
 const contactRoutes = require('./routes/contactRoutes');
+const houseRoutes = require('./routes/houseRoutes');
 
 const app = express();
 
@@ -14,7 +15,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Configure CORS
+<<<<<<< HEAD
 const allowedOrigins = ['http://localhost:3000', 'https://www.proptelligence.net', 'https://server-101.onrender.com'];
+=======
+const allowedOrigins = ['http://localhost:3000', 'https://www.proptelligence.net',"https://property-backend-1.onrender.com"];
+>>>>>>> 7bdf05c7fc7c31b02aa29ed620ddc98c406cedbd
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -46,7 +51,11 @@ function generateOrderId() {
 
 // Routes
 app.use('/', authRoutes);
-app.use('/contact', contactRoutes);
+app.use('/contact', contactRoutes); 
+app.use('/house', houseRoutes);
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
 
 app.get('/', (req, res) => {
   res.send('Hello World!');

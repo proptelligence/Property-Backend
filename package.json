@@ -12,7 +12,11 @@
   "dependencies": {
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
+<<<<<<< HEAD
     "cashfree-pg": "^4.1.2",
+=======
+    "bcryptjs": "^2.4.3",
+>>>>>>> 7bdf05c7fc7c31b02aa29ed620ddc98c406cedbd
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
