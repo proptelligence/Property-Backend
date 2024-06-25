@@ -64,10 +64,10 @@ app.get('/payment', async (req, res) => {
       "order_currency": "INR",
       "order_id": await generateOrderId(),
       "customer_details": {
-        "customer_id": "webcodder01",
+        "customer_id": "prop101",
         "customer_phone": "9999999999",
-        "customer_name": "Web Codder",
-        "customer_email": "webcodder@example.com"
+        "customer_name": "Proptelligence",
+        "customer_email": "proptelligence@example.com"
       },
     };
 
@@ -100,5 +100,5 @@ app.post('/verify', async (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
