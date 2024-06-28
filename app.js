@@ -7,13 +7,14 @@ require('dotenv').config();
 const authRoutes = require('./routes/authRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const houseRoutes = require('./routes/houseRoutes');
+const propertyRoutes = require('./routes/propertyRoutes');
+const propertyController = require('./controllers/propertyController'); // Import propertyController
 
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 
 const allowedOrigins = ['http://localhost:3000', 'https://www.proptelligence.net', 'https://server-101.onrender.com'];
 app.use(cors({
@@ -49,14 +50,11 @@ function generateOrderId() {
 app.use('/', authRoutes);
 app.use('/contact', contactRoutes); 
 app.use('/house', houseRoutes);
+app.use('/properties', propertyRoutes); // Use the property routes
+
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
 app.get('/payment', async (req, res) => {
   try {
     let request = {
